@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'meta.tmpl' %}
+</head>
+<body>
+    {% include 'header.tmpl' %}
+
+    <main>
+        <article class="post">
+            <div class="post-meta">{{ post.date }}</div>
+            <h2>{{ post.title }}</h2>
+            <div class="post-content">
+                {{ post.content | safe }}
+            </div>
+        </article>
+    </main>
+
+    {% include 'footer.tmpl' %}
+</body>
+</html>
