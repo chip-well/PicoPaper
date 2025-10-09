@@ -4,9 +4,10 @@ A minimal static site generator for blogs built with Python 3 and Jinja2
 
 - Status: alpha - expect many changes
 - Goals: keeping it simple and easy to understand
-- Demo: 
+- Demo: [picopaper.com](https://picopaper.com/)
 
 Show cases:
+- [securitypending.com](https://securitypending.com/)
 
 ---
 
