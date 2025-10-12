@@ -6,6 +6,7 @@
 - separate feeds like [/feed/tutorial/](/feed/tutorial/)
 - excluding feeds in config file like [/feed/draft/](/feed/draft/)
 - static files like [/LICENSE](/LICENSE)
+- html anchors for headers like [#second-header](/your-first-article/#second-header)
 
 Everything is **[open-source](https://git.uphillsecurity.com/cf7/picopaper)**!
 

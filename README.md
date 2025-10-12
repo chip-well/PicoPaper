@@ -22,6 +22,7 @@ Show cases:
 - Static files
 - separate feeds (used for categories, tagging, etc) `/feed/{tag}`
 - exclusion of feeds from main feed (drafts or system notes)
+- HTML anchors for headers
 
 **Ideas**:
 - RSS
