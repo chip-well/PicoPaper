@@ -24,8 +24,8 @@ class SSGGGenerator:
         # Setup Jinja2
         self.env = Environment(loader=FileSystemLoader(self.templates_dir))
 
-        # Setup markdown
-        self.md = markdown.Markdown(extensions=['extra'])
+        # Setup markdown with toc extension for header anchors
+        self.md = markdown.Markdown(extensions=['extra', 'toc'])
 
     def parse_filename(self, filename):
         """Parse filename format: YYYY-MM-DD_type_name[_feed].md"""
@@ -47,6 +47,20 @@ class SSGGGenerator:
             'filename': filename
         }
 
+    def add_header_anchors(self, html_content):
+        """Add anchor links to headers with IDs"""
+        # Pattern to match headers with id attributes: <h2 id="some-id">Text</h2>
+        def replace_header(match):
+            tag = match.group(1)
+            header_id = match.group(2)
+            text = match.group(3)
+            # Add anchor link with # symbol
+            return f'<{tag} id="{header_id}">{text} <a href="#{header_id}" class="header-anchor">#</a></{tag}>'
+
+        # Match h2-h6 tags with id attributes
+        pattern = r'<(h[2-6]) id="([^"]+)">([^<]+)<\/\1>'
+        return re.sub(pattern, replace_header, html_content)
+
     def read_post(self, filepath):
         """Read markdown file and extract title and content"""
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -62,6 +76,9 @@ class SSGGGenerator:
 
         # Convert markdown to HTML
         html_content = self.md.convert(content)
+
+        # Add anchor links to headers
+        html_content = self.add_header_anchors(html_content)
 
         return title, html_content
 
