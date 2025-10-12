@@ -211,9 +211,9 @@ class SSGGGenerator:
         for feed_name, posts in feeds.items():
             self.generate_index(posts, feed_name)
 
-        # Generate individual pages for long posts and pages
+        # Generate individual pages for long posts, short posts, and pages
         for post in all_posts:
-            if post['type'] in ['long', 'page']:
+            if post['type'] in ['long', 'short', 'page']:
                 self.generate_post_page(post)
 
         # Copy assets
