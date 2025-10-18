@@ -3,6 +3,7 @@
 A minimal static site generator for blogs built with Python 3 and Jinja2
 
 - Status: alpha - expect many changes
+- [Issue Tracker](https://git.uphillsecurity.com/cf7/picopaper/issues)
 - Goals: keeping it simple and easy to understand
 - Demo: [picopaper.com](https://picopaper.com/)
 
@@ -154,6 +155,12 @@ Themes are organized in the `theme/` directory. Each theme has its own subdirect
 - `assets/` - CSS, JavaScript, and other static assets
 
 To switch themes, change the `THEME` setting in `config.py`
+
+---
+
+## Notes
+
+- [Github Mirror](https://github.com/CaffeineFueled1/picopaper)
 
 ---
 
