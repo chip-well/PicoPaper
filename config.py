@@ -2,7 +2,7 @@
 
 BLOG_TITLE = "Christophers Blog"
 BLOG_DESCRIPTION = "we like simple."
-THEME = "dark"
+THEME = "default"
 
 # Exclude specific feeds from the main page (they'll still have their own /feed/name/ pages)
 EXCLUDE_FEEDS_FROM_MAIN = ['draft','private']  # e.g., ['python', 'drafts']
