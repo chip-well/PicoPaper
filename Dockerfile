@@ -34,4 +34,4 @@ ENV PYTHONPATH=/app
 EXPOSE 8000
 
 # Generate the site and serve it on port 8000
-CMD ["bash", "-c", "python3 /usr/local/bin/picopaper.py && exec python3 -m http.server 8000 --directory /app/output --bind 0.0.0.0"]
+CMD ["bash", "-c", "python3 /usr/local/bin/picopaper.py && exec python3 -m http.server 8000 --directory /app/output --bind 127.0.0.1"]
