@@ -30,8 +30,10 @@ WORKDIR /app
 # Add /app to Python path so it can find config.py
 ENV PYTHONPATH=/app
 
-# Expose port for web server
+# Expose port 8000 only
 EXPOSE 8000
 
-# Generate the site and serve it on port 8000
-CMD ["bash", "-c", "python3 /usr/local/bin/picopaper.py && exec python3 -m http.server 8000 --directory /app/output --bind 127.0.0.1"]
+# Generate the site and serve it ONLY on port 8000
+# --bind 0.0.0.0 listens on all interfaces but only on port 8000
+# This prevents conflicts with other containers on different ports
+CMD ["bash", "-c", "python3 /usr/local/bin/picopaper.py && exec python3 -m http.server 8000 --directory /app/output --bind 0.0.0.0"]
