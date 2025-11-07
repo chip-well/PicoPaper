@@ -26,3 +26,11 @@ ENV PYTHONPATH=/app
 
 # Generate the site on container start
 CMD ["python3", "/usr/local/bin/picopaper.py"]
+
+# Copy config.py to /app
+COPY config.py /app/config.py
+
+# Copy other necessary files
+COPY items /app/items
+COPY theme /app/theme
+COPY static /app/static
