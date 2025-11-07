@@ -1,8 +1,8 @@
 """Configuration file for picopaper blog"""
 
-BLOG_TITLE = "picopaper"
+BLOG_TITLE = "Christophers Blog"
 BLOG_DESCRIPTION = "we like simple."
-THEME = "default"
+THEME = "dark"
 
 # Exclude specific feeds from the main page (they'll still have their own /feed/name/ pages)
 EXCLUDE_FEEDS_FROM_MAIN = ['draft','private']  # e.g., ['python', 'drafts']
